@@ -1,0 +1,16 @@
+.section {
+  padding: 3rem 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.section h1,
+.section h2 {
+  margin-bottom: 1rem;
+}
+
+.section p {
+  margin-bottom: 0.5rem;
+}

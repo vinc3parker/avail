@@ -1,0 +1,25 @@
+.login-image-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+  min-height: 100vh; /* Ensures it fills the height of the page */
+}
+
+.login-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.4);
+}
+
+.login-logo {
+  width: 160px;
+  z-index: 2;
+  position: relative;
+}
