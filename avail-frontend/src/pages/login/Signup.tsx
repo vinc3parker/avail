@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Signup.css';
+import './auth.css';
 
 const Signup: React.FC = () => {
   const [name, setName] = useState('');
@@ -13,22 +13,22 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-image-section">
+    <div className="auth-container">
+      <div className="auth-image-section">
         <img
           src="/brand/Transparent_white.png"
           alt="Avail Logo"
-          className="login-logo"
+          className="auth-logo"
         />
         <img
           src="images/stock/Stock6.jpg"
           alt="Signup Background"
-          className="login-bg"
+          className="auth-bg"
         />
       </div>
-      <div className="login-form-section">
+      <div className="auth-form-section">
         <h2>Create an Account</h2>
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="text"
             placeholder="Full Name"
