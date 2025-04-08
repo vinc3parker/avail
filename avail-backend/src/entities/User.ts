@@ -3,10 +3,13 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 @Entity()
 export class User {
     @PrimaryGeneratedColumn("uuid")
-    id: string;
+    id: number;
 
     @Column()
     fullName: string;
+
+    @Column()
+    email: string;
 
     @Column({ unique: true })
     username: string;
@@ -15,5 +18,5 @@ export class User {
     password: string;
 
     @Column({ default: "local" })
-    provider: "local" | "google" | "apple";
+    provider: string;
 }

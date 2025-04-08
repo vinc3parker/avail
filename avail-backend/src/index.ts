@@ -1,20 +1,25 @@
-import express from "express";
-import cors from "cors";
-import { AppDataSource } from "./config/data-source";
-import authRoutes from "./routes/auth";
+import express from 'express';
+import cors from 'cors';
+import { AppDataSource } from './config/data-source';
+import dotenv from 'dotenv';
+import authRoutes from './routes/auth';
+
+dotenv.config();
+
 
 const app = express();
-app.use(cors());
 app.use(express.json());
-app.use("/api", authRoutes);
+const PORT = process.env.PORT || 4000;
+
+app.use('/api', authRoutes);
+
+app.use(express.json());
 
 AppDataSource.initialize()
   .then(() => {
-    console.log("Database connected ✅");
-    app.listen(4000, () =>
-      console.log("Server running on http://localhost:4000")
-    );
+    console.log('Database connected successfully');
+    app.listen(PORT, () => console.log('Server is running at http://localhost:' + PORT));
   })
-  .catch((err) => {
-    console.error("Database connection failed ❌", err);
-  });
+  .catch((error) => {
+    console.error('Databaseconnection failed', error);
+  })
